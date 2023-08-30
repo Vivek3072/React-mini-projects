@@ -15,9 +15,12 @@ Here's a list of projects included in this repository:
 
 Each project folder contains its own README with details and usage instructions.
 
-## Installation
+## Installation ans Setup
 
-To run any of these projects locally, follow these steps:
+🚗 To run any of these projects locally go to the respective folder and open the HTML file with Live Server.
+🔎 You can install the Live Server Extension in Vs Code.
+
+### Contributors are most welcome!
 
 1. Clone this repository:
 2. Create a fork
