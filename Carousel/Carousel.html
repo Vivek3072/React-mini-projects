@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Carousel</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState, useReducer, useEffect } = React;
+      const imgArr = [
+        "https://w0.peakpx.com/wallpaper/310/203/HD-wallpaper-angel-musician-cg-space-wing-sweet-fantasy-instrument-anime-feather-beauty-anime-girl-realistic-long-hair-star-wings-lovely-black-sky-sexy-happy-cute-guitar-divine-beautiful-elegant.jpg",
+        "https://w0.peakpx.com/wallpaper/198/844/HD-wallpaper-anime-original-girl-guitar.jpg",
+        "https://e0.pxfuel.com/wallpapers/755/391/desktop-wallpaper-anime-girl-playing-guitar-instrument-music-cute-anime-girl-playing-guitar.jpg",
+        "https://w0.peakpx.com/wallpaper/270/453/HD-wallpaper-girl-guitar-music-anime-design.jpg",
+      ];
+
+      const len = imgArr.length;
+      const index = 0;
+      const reducer = (state, action) => {
+        switch (action) {
+          case "prev":
+            return (state - 1 + len) % len;
+          case "center":
+            return index;
+          case "next":
+            return (state + 1) % len;
+          default:
+            return state % len;
+        }
+      };
+
+      const Slider = () => {
+        const [state, dispatch] = useReducer(reducer, index);
+        const [delay, setDelay] = useState(0);
+
+        const handleClick = (actionType) => {
+          setDelay(5000);
+          dispatch(actionType);
+        };
+
+        useEffect(() => {
+          console.log("INSIDE EFFECT HOOK");
+          setTimeout(() => dispatch("next"), [4000 + delay]);
+        }, [state, delay]);
+
+        return (
+          <div class="bg-gray-800 flex flex-col items-center py-10 justify-center w-full h-screen">
+            <header class="mb-auto flex items-center justify-around w-full px-5">
+              <a
+                href="https://vivek-srivastava.netlify.app/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 mr-4 hover:text-gray-200"
+              >
+                <img
+                  src="https://vivek-srivastava.netlify.app/static/media/Logo.e9e70606f2a0628689d7b6ea1139af0b.svg"
+                  alt=""
+                  class="w-20"
+                />
+              </a>
+              <div class="text-5xl text-white font-medium"> React Carousel</div>
+              <a
+                href="https://www.linkedin.com/in/vivek-srivastava-2b3642202"
+                target="_blank"
+                rel="noreferrer"
+                className="text-gray-400 mr-4 hover:text-blue-300"
+              >
+                View Code &rarr;
+              </a>
+            </header>
+            <div>
+              <div className="relative flex flex-row delay-200 transition-pulse">
+                <img
+                  className="relative left-10 z-0 transform rotate-y-45 origin-left my-auto mr-2 py-5 rounded blur-[2px] hover:blur-[0px] transition-transform"
+                  src={imgArr[(state - 1 + len) % len]}
+                  alt="state"
+                  style={{
+                    width: "20rem",
+                    height: "40vh",
+                    filter: "blur(1px)",
+                  }}
+                />
+                <img
+                  className="duration-300 z-20 shadow-black shadow-2xl hover:shadow-xl transition-all translate-x rounded"
+                  src={imgArr[state]}
+                  alt="state"
+                  style={{ width: "40rem", height: "60vh" }}
+                />
+                <img
+                  className="relative right-10 z-0 transform -rotate-y-45 origin-right my-auto ml-2 py-5 rounded blur-[2px] hover:blur-[0px] transition-transform"
+                  src={imgArr[(state + 1) % len]}
+                  alt="state"
+                  style={{
+                    width: "20rem",
+                    height: "40vh",
+                    filter: "blur(1px)",
+                  }}
+                />
+              </div>
+              <div className="relative flex flex-row justify-between">
+                <button
+                  onClick={() => handleClick("prev")}
+                  className="bg-gray-600 rounded-full relative text-xl rounded text-white prev"
+                  style={{ width: "40px", height: "40px", top: "-230px" }}
+                >
+                  &larr;
+                </button>
+                <button
+                  onClick={() => handleClick("next")}
+                  className="bg-gray-600 rounded-full relative text-xl rounded text-white prev"
+                  style={{ width: "40px", height: "40px", top: "-230px" }}
+                >
+                  &rarr;
+                </button>
+              </div>
+            </div>
+            <footer class="mt-auto flex flex-row">
+              <div class="text-white">Connect with me ❣ - </div>
+              <div className="ml-1 flex items-center flex-col md:flex-row">
+                <a
+                  href="https://www.linkedin.com/in/vivek-srivastava-2b3642202"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 mr-4 hover:text-blue-500"
+                >
+                  Linkedin
+                </a>
+                <a
+                  href="https://github.com/Vivek3072"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 mr-4 hover:text-white"
+                >
+                  Github
+                </a>
+                <a
+                  href="https://vivek-srivastava.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 mr-4 hover:text-gray-200"
+                >
+                  Portfolio
+                </a>
+                <a
+                  href="https://www.youtube.com/@viveksrivastava3072"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 mr-4 hover:text-red-600"
+                >
+                  Youtube
+                </a>
+                <a
+                  href="https://www.instagram.com/vvk_srvstv_/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-gray-400 mr-4 hover:text-pink-500"
+                >
+                  Instagram
+                </a>
+              </div>
+            </footer>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<Slider />, document.getElementById("root"));
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </body>
+</html>

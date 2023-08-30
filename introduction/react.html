@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Example with Hooks</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { useState } = React;
+
+      const App = () => {
+        const [count, setCount] = useState(0);
+
+        return (
+          <div>
+            <h1>Hello! React useState() Hook with plain HTML</h1>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount((prev) => prev + 1)}>
+              Increment
+            </button>
+            <button onClick={() => setCount((prev) => prev - 1)}>
+              Decrement
+            </button>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </body>
+</html>
