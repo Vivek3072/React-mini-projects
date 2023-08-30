@@ -8,8 +8,9 @@ This repository contains a collection of small React projects that I've created 
 
 Here's a list of projects included in this repository:
 
-- [Carousel with useReducer Hooks](./carousel)
+- [Carousel with React.js Hooks](./Carousel)
 - [Dynamic Chess Board](./chess-board)
+- [Introduction](./introduction)
 - more coming...
 
 Each project folder contains its own README with details and usage instructions.
