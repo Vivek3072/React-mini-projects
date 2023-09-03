@@ -8,17 +8,17 @@ This repository contains a collection of small React projects that I've created 
 
 Here's a list of projects included in this repository:
 
-- [Carousel with React.js Hooks](./Carousel)
-- [Dynamic Chess Board](./chess-board)
 - [Introduction](./introduction)
+- [Carousel with React.js Hooks](./Carousel)
+- [Dynamic Chess Board](./chessboard)
 - more coming...
 
 Each project folder contains its own README with details and usage instructions.
 
-## Installation ans Setup
+## Installation and Setup
 
-🚗 To run any of these projects locally go to the respective folder and open the HTML file with Live Server.
-🔎 You can install the Live Server Extension in Vs Code.
+- 🚗 To run any of these projects locally go to the respective folder and open the HTML file with Live Server.
+- 🔎 You can install the Live Server Extension in Vs Code.
 
 ### Contributors are most welcome!
 
@@ -32,8 +32,7 @@ Don't forget to give it a ⭐
 
 Connect with me on social media to stay updated on my projects and activities:
 
-[LinkedIn](https://www.linkedin.com/in/vivek-srivas)
-[Github](https://github.com/Vivek3072)
-[Portfolio](https://vivek-srivastava.netlify.app/)
-[Youtube](https://www.youtube.com/@viveksrivastava3072)
-[Instagram](https://www.instagram.com/vvk_srvstv_)
+- [LinkedIn](https://www.linkedin.com/in/vivek-srivas)
+- [Github](https://github.com/Vivek3072)
+- [Portfolio](https://vivek-srivastava.netlify.app/)
+- [Youtube](https://www.youtube.com/@viveksrivastava3072)
