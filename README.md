@@ -10,7 +10,7 @@ Here's a list of projects included in this repository:
 
 - [Introduction](./introduction)
 - [Carousel with React.js Hooks](./Carousel)
-- [Dynamic Chess Board](./chess-board)
+- [Dynamic Chess Board](./chessboard)
 - [Dynamic Accordion](./accordion)
 - [Introduction](./introduction)
 - more coming...
